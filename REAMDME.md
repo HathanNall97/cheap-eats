@@ -1,4 +1,3 @@
-<<<<<<< HEAD:REAMDME.md
 # cs1530 Software Engineering Cheap Eats
 Hey gang!
 ## Setup Info
@@ -192,5 +191,4 @@ scheme you may want to change this.
 ```yaml
     - "export VERSION_CODE=$(($CI_PIPELINE_IID)) && echo $VERSION_CODE"
     - "export VERSION_SHA=`echo ${CI_COMMIT_SHA:0:8}` && echo $VERSION_SHA"
->>>>>>> 901cce69733c42f75937fe75eae23f66bb155fe9:README.md
 ```

@@ -1,7 +1,8 @@
 # cs1530 Software Engineering Cheap Eats
 Hey gang!
 ## General
-To get to the KANBAN board, click the 'Issues' tab on the right, and click 'Board'
+ - To get to the KANBAN board, click the 'Issues' tab on the right, and click 'Board'
+ - link to the SRS: https://drive.google.com/file/d/1ri03OnrLH3oIRJjKuNgGQuMUKXepNvLY/view?usp=sharing
 ## Environment Setup Info
 ## Ground Rules
 1. Try to always work on a branch different from main. This has saved many an ass (mine included)

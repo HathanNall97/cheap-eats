@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AccountActivity extends AppCompatActivity {
 
     private Button btnChangeEmail, btnChangePass, btnPassReset, btnDeleteAccount, btnSignOut, btnBack;
     FirebaseAuth auth;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class AccountActivity extends AppCompatActivity {
         btnSignOut = (Button) findViewById(R.id.sign_out);
         btnBack = (Button) findViewById(R.id.backbutton);
         auth = FirebaseAuth.getInstance();
+
 
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -66,14 +69,15 @@ public class AccountActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(AccountActivity.this, delAccountActivity.class));
             }
-        });
+        });*/
 
         btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                auth.signOut();
                 startActivity(new Intent(AccountActivity.this, SignupActivity.class));
             }
-        });*/
+        });
 
 
 

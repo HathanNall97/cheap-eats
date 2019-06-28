@@ -22,7 +22,7 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-       btnChangeEmail = (Button) findViewById(R.id.change_email_button);
+        btnChangeEmail = (Button) findViewById(R.id.change_email_button);
         btnChangePass = (Button) findViewById(R.id.change_password_button);
         btnPassReset = (Button) findViewById(R.id.sending_pass_reset_button);
         btnDeleteAccount = (Button) findViewById(R.id.remove_user_button);

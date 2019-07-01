@@ -15,6 +15,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -23,10 +25,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAccountSettings;
+    //private TextView emailDisplay, userNameDisplay;
+    //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        //Displaying the user's email in settings
+        //emailDisplay = (TextView) findViewById(R.id.emailDisplayed);
+       // emailDisplay.setText(user.getEmail());
+
+        //Displaying the user's username in settings
+        //userNameDisplay = (TextView) findViewById(R.id.userNameDisplayed);
+        //userNameDisplay.setText(user.getDisplayName());
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);

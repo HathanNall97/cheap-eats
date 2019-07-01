@@ -30,10 +30,9 @@
             android:layout_marginTop="@dimen/nav_header_height"
             android:background="#146659"
             android:fontFamily="casual"
-            android:text="User Settings"
+            android:text="@string/profile_settings"
             android:textColor="#F2F2F2" />
     </com.google.android.material.navigation.NavigationView>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

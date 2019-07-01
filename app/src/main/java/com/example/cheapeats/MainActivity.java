@@ -30,8 +30,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAccountSettings;
-    //private TextView emailDisplay, userNameDisplay;
-    //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
 
     @Override
@@ -40,25 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Displaying the user's email in settings
-        //emailDisplay = (TextView) findViewById(R.id.emailDisplayed);
-       // emailDisplay.setText(user.getEmail());
-
-        //Displaying the user's username in settings
-        //userNameDisplay = (TextView) findViewById(R.id.userNameDisplayed);
-        //userNameDisplay.setText(user.getDisplayName());
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
 
         btnAccountSettings = (Button) findViewById(R.id.UserSettings);

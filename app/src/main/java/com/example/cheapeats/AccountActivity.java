@@ -78,8 +78,8 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        btnChangeUserN.setOnClickListener(new View.OnClickListener() {
+
+        /*btnChangeUserN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 btnSendText.setVisibility(View.VISIBLE);
@@ -99,6 +99,7 @@ public class AccountActivity extends AppCompatActivity {
 
             }
         });
+
 
         // ^  EVERYTHING ABOVE IS IMPLEMENTED  ^
         // -----------------------------------------------------------------

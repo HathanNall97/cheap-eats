@@ -30,6 +30,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAccountSettings;
+    private Button btnCreatePost;
 
 
     @Override
@@ -48,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AccountActivity.class));
+            }
+        });
+
+        btnCreatePost = (Button) findViewById(R.id.PostCreateBtn);
+        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PostCreationActivity.class));
             }
         });
 

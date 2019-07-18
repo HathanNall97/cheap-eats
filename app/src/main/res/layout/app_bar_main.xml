@@ -30,18 +30,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/PostCreateBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Create a Post"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/UserProfile"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:shadowColor="@color/cardview_dark_background"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="User Profile" />
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

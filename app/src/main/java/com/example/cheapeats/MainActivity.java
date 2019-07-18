@@ -27,9 +27,10 @@ import android.view.Menu;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity<toggle> extends AppCompatActivity {
 
     private Button btnAccountSettings;
+    private Button btnCreatePost;
 
 
     @Override
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, AccountActivity.class));
             }
+        });
+
+        btnCreatePost = (Button) findViewById(R.id.PostCreateButton);
+        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick(View view) {
+            startActivity(new Intent(MainActivity.this, PostCreationActivity.class));
+        }
         });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

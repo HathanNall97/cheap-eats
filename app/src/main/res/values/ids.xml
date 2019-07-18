@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="event_title_entry" type="id" />
+    <item name="host_name_entry" type="id" />
+    <item name="event_description_entry" type="id" />
+    <item name="event_date_entry" type="id" />
+    <item name="complete_post_button" type="id" />
+</resources>

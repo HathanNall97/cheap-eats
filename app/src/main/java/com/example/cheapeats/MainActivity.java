@@ -2,30 +2,19 @@ package com.example.cheapeats;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import android.view.View;
-
-import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-
 import android.view.MenuItem;
-
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
 import android.widget.Button;
-import android.widget.TextView;
+
 
 public class MainActivity<toggle> extends AppCompatActivity {
 
@@ -42,7 +31,11 @@ public class MainActivity<toggle> extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+//        // Write a message to the database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+//
+//        myRef.setValue("Hello, World!");
 
         btnAccountSettings = (Button) findViewById(R.id.UserSettings);
         btnAccountSettings.setOnClickListener(new View.OnClickListener() {
@@ -52,13 +45,20 @@ public class MainActivity<toggle> extends AppCompatActivity {
             }
         });
 
-        btnCreatePost = (Button) findViewById(R.id.PostCreateButton);
+        btnCreatePost = (Button) findViewById(R.id.PostBrowseButton);
         btnCreatePost.setOnClickListener(new View.OnClickListener() {
-        @Override
+            @Override
             public void onClick(View view) {
-            startActivity(new Intent(MainActivity.this, PostCreationActivity.class));
-        }
+                startActivity(new Intent(MainActivity.this, PostBrowsingActivity.class));
+            }
         });
+//        btnCreatePost = (Button) findViewById(R.id.PostCreateButton);
+//        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, PostCreationActivity.class));
+//            }
+//        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

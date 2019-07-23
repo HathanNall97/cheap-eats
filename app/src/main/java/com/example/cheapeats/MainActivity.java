@@ -7,8 +7,7 @@ import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,7 +18,7 @@ import android.widget.Button;
 public class MainActivity<toggle> extends AppCompatActivity {
 
     private Button btnAccountSettings;
-    private Button btnCreatePost;
+    private Button browsePostsBtn;
 
 
     @Override
@@ -45,15 +44,15 @@ public class MainActivity<toggle> extends AppCompatActivity {
             }
         });
 
-        btnCreatePost = (Button) findViewById(R.id.PostBrowseButton);
-        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+        browsePostsBtn = (Button) findViewById(R.id.PostBrowseButton);
+        browsePostsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, PostBrowsingActivity.class));
             }
         });
-//        btnCreatePost = (Button) findViewById(R.id.PostCreateButton);
-//        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+//        browsePostsBtn = (Button) findViewById(R.id.PostCreateButton);
+//        browsePostsBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                startActivity(new Intent(MainActivity.this, PostCreationActivity.class));

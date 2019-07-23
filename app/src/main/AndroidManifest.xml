@@ -15,6 +15,12 @@
             android:name=".PostBrowsingActivity"
             android:label="@string/title_activity_post_browsing"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".PostCreationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_POST"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".AccountActivity" />
         <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".LoginActivity" />

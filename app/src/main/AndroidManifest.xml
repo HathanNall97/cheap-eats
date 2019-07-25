@@ -11,27 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".PostBrowsingActivity"
-            android:label="@string/title_activity_post_browsing"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE" />
-                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
-                <data android:scheme="http"
-                    android:host="www.example.com"
-                    android:pathPrefix="/gizmos" />
-                <!-- note that the leading "/" is required for pathPrefix-->
-                <!-- Accepts URIs that begin with "example://gizmos” -->
-                <data android:scheme="example"
-                    android:host="gizmos" />
-            </intent-filter>
-        </activity>
+        <!--<activity-->
+            <!--android:name=".PostBrowsingActivity"-->
+            <!--android:parentActivityName=".MainActivity">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value=".MainActivity"/>-->
+            <!---->
+            <!---->
+            <!--android:label="@string/title_activity_post_browsing"-->
+            <!--android:theme="@style/AppTheme.NoActionBar"-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+                <!--<category android:name="android.intent.category.BROWSABLE" />-->
+                <!--&lt;!&ndash; Accepts URIs that begin with "http://www.example.com/gizmos” &ndash;&gt;-->
+                <!--<data android:scheme="http"-->
+                    <!--android:host="www.example.com"-->
+                    <!--android:pathPrefix="/gizmos" />-->
+                <!--&lt;!&ndash; note that the leading "/" is required for pathPrefix&ndash;&gt;-->
+                <!--&lt;!&ndash; Accepts URIs that begin with "example://gizmos” &ndash;&gt;-->
+                <!--<data android:scheme="example"-->
+                    <!--android:host="gizmos" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
         <activity
             android:name=".PostCreationActivity">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.CREATE_POST"/>
             </intent-filter>
         </activity>
@@ -40,7 +47,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity">
             <intent-filter>
-                <action android:name="android.intent.action.SIGNUP" />
+                <action
+                    android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

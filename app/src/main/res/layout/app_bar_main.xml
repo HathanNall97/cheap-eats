@@ -20,29 +20,31 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/inluded_content_main_id"
+        layout="@layout/content_main" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="0dp"
-        android:orientation="horizontal">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginBottom="0dp"-->
+        <!--android:orientation="horizontal">-->
 
-        <Button
-            android:id="@+id/PostBrowseButton"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Browse Events" />
+        <!--<Button-->
+            <!--android:id="@+id/button1"-->
+            <!--style="@style/Widget.AppCompat.Button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@btn1_text"/>-->
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Button" />
-    </LinearLayout>
+        <!--<Button-->
+            <!--android:id="@+id/button2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="@btn2_text" />-->
+    <!--</LinearLayout>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

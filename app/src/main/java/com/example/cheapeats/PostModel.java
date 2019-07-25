@@ -4,6 +4,7 @@ import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.auth.User;
 import com.google.type.Date;
 
+
 public class PostModel {
 
 
@@ -13,6 +14,16 @@ public class PostModel {
     private GeoPoint location;
     private String title, description;
 
+    /**
+     * @ Data model representing an event posting in the Firestore Database
+     * @param title
+     * @param description
+     * @param startTime
+     * @param author
+     * @param flagCount
+     * @param cloutValue
+     * @param location
+     */
     public PostModel(String title, String description, Date startTime, User author, int flagCount, int cloutValue, GeoPoint location) {
         this.title = title;
         this.description = description;
@@ -26,6 +37,11 @@ public class PostModel {
 
     }
 
+    /**
+     * Data model representing an event posting in the Firestore Database
+     * @param title
+     * @param description
+     */
     public PostModel(String title, String description){
         this.title = title;
         this.description = description;

@@ -40,38 +40,27 @@
             <!--android:layout_constraintRight_toRightOf="@+id/edt_title"-->
             <!--android:layout_constraintTop_toBottomOf="@+id/edt_content"-->
             <!--/>-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/my_fucking_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:fastScrollEnabled="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/my_fucking_textView"
-            style="@android:style/Widget.TextView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.44"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_add_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom | end"
         android:layout_margin="16dp"
         android:clickable="true"
+        android:src="@drawable/ic_add_black_24dp"
         app:backgroundTint="#8BC34A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:src="@drawable/ic_add"
         android:focusable="true" />
 
 

@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".NewPostActivity">
 
     <EditText
-        android:id="@+id/host_name_entry"
+        android:id="@+id/edit_title"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Event Title" />
 
     <EditText
-        android:id="@+id/event_title_entry"
+        android:id="@+id/edit_host_name"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Event Host" />
 
     <EditText
-        android:id="@+id/event_description_entry"
+        android:id="@+id/edit_description"
         android:layout_width="match_parent"
         android:layout_height="27dp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="event Description" />
+        android:inputType="textMultiLine"
+        android:hint="Event Description" />
 
     <CalendarView
-        android:id="@+id/event_date_entry"
+        android:id="@+id/edit_date_entry"
         android:layout_width="match_parent"
         android:layout_height="221dp"
         android:layout_weight="1" />
 
     <Button
-        android:id="@+id/complete_post_button"
+        android:id="@+id/post_button"
         android:layout_width="match_parent"
-        android:layout_height="1dip"
+        android:layout_height="1dp"
         android:layout_weight="1"
         android:text="Post" />
 

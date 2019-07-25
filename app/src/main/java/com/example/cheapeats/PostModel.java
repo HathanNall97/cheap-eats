@@ -1,38 +1,43 @@
 package com.example.cheapeats;
 
 import com.google.firebase.firestore.GeoPoint;
-import com.google.firebase.firestore.auth.User;
-import com.google.type.Date;
+//import com.google.type.Date;
 
 
 public class PostModel {
 
 
-    private Date startTime;
-    private User author;
+//    private Date startTime;
+//    private User author;
     private int flagCount, cloutValue;
     private GeoPoint location;
-    private String title, description;
+    private String title, host, description;
 
     /**
      * @ Data model representing an event posting in the Firestore Database
      * @param title
      * @param description
-     * @param startTime
-     * @param author
      * @param flagCount
      * @param cloutValue
      * @param location
+     * @param host
      */
-    public PostModel(String title, String description, Date startTime, User author, int flagCount, int cloutValue, GeoPoint location) {
+    public PostModel(String title, String description, int flagCount, int cloutValue, GeoPoint location, String host) {
         this.title = title;
         this.description = description;
-        this.startTime = startTime;
-        this.author = author;
+//        this.startTime = startTime;
+//        this.author = author;
         this.flagCount = flagCount;
         this.cloutValue = cloutValue;
         this.location = location;
+        this.host = host;
     }
+    public PostModel(String title, String host, String description){
+        this.title = title;
+        this.host = host;
+        this.description = description;
+    }
+
     public PostModel(){
 
     }
@@ -48,21 +53,21 @@ public class PostModel {
     }
 
 
-    public Date getStartTime() {
-        return startTime;
-    }
+//    public Date getStartTime() {
+//        return startTime;
+//    }
+//
+//    public void setStartTime(Date startTime) {
+//        this.startTime = startTime;
+//    }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
-    }
+//    public User getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(User author) {
+//        this.author = author;
+//    }
 
     public int getFlagCount() {
         return flagCount;
@@ -102,5 +107,13 @@ public class PostModel {
 
     public void setDescription(String description){
         this.description = description;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 }

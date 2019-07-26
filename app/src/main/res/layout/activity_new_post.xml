@@ -1,49 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".NewPostActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical">
+
 
     <EditText
         android:id="@+id/edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:inputType="textPersonName"
         android:hint="Event Title" />
 
     <EditText
         android:id="@+id/edit_host_name"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Event Host" />
+        android:hint="@string/event_host" />
 
     <EditText
         android:id="@+id/edit_description"
         android:layout_width="match_parent"
-        android:layout_height="27dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine"
         android:hint="Event Description" />
 
-    <CalendarView
+        <!--<RatingBar-->
+            <!--android:id="@+id/ratingBar1"-->
+            <!--style="@style/foodRatingBar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+
+        <!--</RatingBar>-->
+
+        <RatingBar
+            android:id="@+id/ratingBar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/activity_vertical_margin"
+            android:text="Select the appropriate tags" />
+
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ToggleButton"
+            android:textOff="TAG"
+            android:textOn="Tag" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/activity_vertical_margin"
+            android:text="Date of the event:" />
+
+        <CalendarView
         android:id="@+id/edit_date_entry"
-        android:layout_width="match_parent"
-        android:layout_height="221dp"
-        android:layout_weight="1" />
+        android:hint="Date of the event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
     <Button
         android:id="@+id/post_button"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:text="Post" />
 
 </LinearLayout>
+</ScrollView>

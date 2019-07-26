@@ -21,7 +21,7 @@ public class PostAdapter extends FirestoreRecyclerAdapter<PostModel, PostAdapter
     protected void onBindViewHolder(@NonNull PostHolder postHolder, int i ,
                                     @NonNull PostModel postModel) {
         postHolder.txt_title.setText(postModel.getTitle());
-        postHolder.txt_description.setText(postModel.getTitle());
+        postHolder.txt_description.setText(postModel.getDescription());
     }
 
     @NonNull

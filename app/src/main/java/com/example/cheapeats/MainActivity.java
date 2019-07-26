@@ -30,14 +30,48 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MainActivity<toggle> extends AppCompatActivity {
+public class MainActivity<toggle> extends AppCompatActivity{
     //creation declarations for test layout
     private Button btnAccountSettings;
     private Button browsePostsBtn;
+
+
+    //Filter Stuff
+    private Spinner spinFilter;
+    public void onCreateFilt(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //addListenerOnSpinnerItemSelection();
+        //addItemsOnSpinner();
+    }
+
+    /*public void addListenerOnSpinnerItemSelection() {
+        spinFilter = (Spinner) findViewById(R.id.FilterPosts);
+
+    }*/
+
+    /*public void addItemsOnSpinner(){
+
+        spinFilter = (Spinner) findViewById(R.id.FilterPosts);
+        List<String> list = new ArrayList<String>();
+        list.add("list 1");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinFilter.setAdapter(dataAdapter);
+    }*/
+
 
     //post stuff
 //    EditText edt_title, edt_content;
@@ -65,10 +99,8 @@ public class MainActivity<toggle> extends AppCompatActivity {
         /* toolbar */
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
         setUpRecyclerView();
+
         // SOME VERY IMPORTANT VIEW BULLSHIT
 //        View app_bar_view = findViewById(R.id.app_bar_id);
 //        View app_content_veiw= app_bar_view.findViewById(R.id.inluded_content_main_id);

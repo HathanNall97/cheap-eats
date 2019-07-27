@@ -25,10 +25,17 @@ public class NewPostActivity extends AppCompatActivity {
     private CalendarView eventDate;
     private Button postComplete;
 
+    private String[] tagList = {"Latin", "Pub Food", "Happy Hour", "Student Organized", "Sandwiches",
+            "American", "BBQ", "Breakfast", "Lunch", "Dinner", "Dessert", "Salads", "Asian", "Pizza",
+            "Hamburgers", "Pasta", "Healthy", "Italian", "Diet & Nutrition", "Vegetarian", "Vegan",
+            "Halal", "Gluten Free", "Organic", "Low-fat", "Low-carb", "Kosher"};
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         //setting up view
         setContentView(R.layout.activity_new_post);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
+        setTitle("Add Post");
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 //        setTitle("Add Post");
 
@@ -58,16 +65,11 @@ public class NewPostActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId()){
-//            case R.id.save_note:
-//                saveNote();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-////            case R.id.whatever:
-////                what I want to do();
-//        }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void populateTags(){
+        return;
     }
 
     private void savePost(){

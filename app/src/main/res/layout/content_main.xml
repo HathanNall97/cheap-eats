@@ -7,39 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
-
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Hello World!"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintRight_toRightOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--<EditText-->
-            <!--android:id="@+id/edt_title"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_constraintTop_toBottomOf="parent"-->
-            <!--android:hint="Title"-->
-            <!--android:inputType="text" />-->
-
-        <!--<EditText-->
-            <!--android:id="@+id/edt_content"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_constraintTop_toBottomOf="@+id/edt_title"-->
-            <!--android:hint="content"-->
-            <!--android:inputType="text" />-->
-        <!--<Button-->
-            <!--android:id="@+id/btn_post"-->
-            <!--android:text="POST"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_constraintRight_toRightOf="@+id/edt_title"-->
-            <!--android:layout_constraintTop_toBottomOf="@+id/edt_content"-->
-            <!--/>-->
+    
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"

@@ -69,34 +69,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
         setUpRecyclerView();
-        // SOME VERY IMPORTANT VIEW BULLSHIT
-//        View app_bar_view = findViewById(R.id.app_bar_id);
-//        View app_content_veiw= app_bar_view.findViewById(R.id.inluded_content_main_id);
-//        /*
-//         * TEST CODE FOR POST CREATION
-//         */
-//        edt_content = (EditText) app_content_veiw.findViewById(R.id.edt_content);
-//        edt_title = (EditText) app_content_veiw.findViewById(R.id.edt_title);
-//        btn_post = (Button) app_content_veiw.findViewById(R.id.btn_post);
-//        recyclerView = (RecyclerView)app_content_veiw.findViewById(R.id.my_fucking_recycler_view);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-        // SET ONCLICK LISTENER FOR TEST BUTTON
-//        btn_post.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view){
-//                postComment();
-//            }
-//        });
-
-        /* tell our adapter to start listening, and refreshing on updates*/
-//        adapter.startListening();
-//        recyclerView.setAdapter(adapter);
-
-
-
-
         btnAccountSettings = (Button) findViewById(R.id.UserSettings);
         btnAccountSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,15 +84,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, NewPostActivity.class));
             }
         });
-
-//        browsePostsBtn = (Button) findViewById(R.id.button1);
-//        browsePostsBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, PostBrowsingActivity.class));
-//            }
-//        });
-//        browsePostsBtn = (Button) findViewById(R.id.PostCreateButton);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

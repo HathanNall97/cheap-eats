@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -59,13 +60,135 @@
             android:text="Select the appropriate tags" />
 
 
-        <ToggleButton
-            android:id="@+id/toggleButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            android:textOff="TAG"
-            android:textOn="Tag" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="88dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="176dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="264dp"
+                tools:layout_editor_absoluteY="96dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="264dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="96dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="88dp"
+                tools:layout_editor_absoluteY="96dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="96dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="264dp"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="88dp"
+                tools:layout_editor_absoluteY="48dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="Latin"
+                android:textOn="Latin"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="48dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/textView3"

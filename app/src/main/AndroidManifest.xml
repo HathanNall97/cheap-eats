@@ -33,7 +33,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewPostActivity">
+            android:name=".NewPostActivity"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <action android:name="android.intent.action.CREATE_POST"/>

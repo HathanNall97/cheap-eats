@@ -35,6 +35,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,21 +47,55 @@ public class MainActivity<toggle> extends AppCompatActivity{
     private Button browsePostsBtn;
 
 
+
     //Filter Stuff
     private Spinner spinFilter;
-    public void onCreateFilt(Bundle savedInstanceState)
+    private Button applyFilter, deleteFilter;
+
+
+    public void onCreateFilt(Bundle savedInstanceStates)
     {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceStates);
         setContentView(R.layout.activity_main);
-        //addListenerOnSpinnerItemSelection();
-        //addItemsOnSpinner();
+        addItemsOnSpinner();
+        addFilterOnButton();
+        addListenerOnSpinnerItemSelection();
+        //addListenerOnDeleteButton()
     }
 
-    /*public void addListenerOnSpinnerItemSelection() {
+    // add items into spinner dynamically
+    public void addItemsOnSpinner() {
+
         spinFilter = (Spinner) findViewById(R.id.FilterPosts);
+        List<String> list = new ArrayList<String>();
+        list.add("list 1");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinFilter.setAdapter(dataAdapter);
+    }
 
-    }*/
+    public void addListenerOnSpinnerItemSelection() {
+        spinFilter = (Spinner) findViewById(R.id.FilterPosts);
+        //spinFilter.setOnItemClickListener(new CustomOnItemSelectedListener());
+    }
 
+    public void addFilterOnButton()
+    {
+        spinFilter = (Spinner) findViewById(R.id.FilterPosts);
+        applyFilter = (Button) findViewById(R.id.applyFilterButton);
+
+        applyFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,
+                        "OnClickListener : " +
+                                "\nSpinner 1 : "+ String.valueOf(spinFilter.getSelectedItem()),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
     /*public void addItemsOnSpinner(){
 
         spinFilter = (Spinner) findViewById(R.id.FilterPosts);

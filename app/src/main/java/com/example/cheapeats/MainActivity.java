@@ -96,6 +96,7 @@ public class MainActivity<toggle> extends AppCompatActivity{
         });
 
     }
+    
     /*public void addItemsOnSpinner(){
 
         spinFilter = (Spinner) findViewById(R.id.FilterPosts);

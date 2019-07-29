@@ -7,46 +7,49 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     tools:context=".NewPostActivity">
+
     <LinearLayout
+        style="@style/Base.Theme.AppCompat"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:orientation="vertical">
-
-
-    <EditText
-        android:id="@+id/edit_title"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Event Title" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/edit_host_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/event_host" />
 
-    <EditText
-        android:id="@+id/edit_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:hint="Event Description" />
+        <EditText
+            android:id="@+id/edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Event Title"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edit_host_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/event_host"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edit_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Event Description"
+            android:inputType="textMultiLine" />
 
         <!--<RatingBar-->
-            <!--android:id="@+id/ratingBar1"-->
-            <!--style="@style/foodRatingBar"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content">-->
+        <!--android:id="@+id/ratingBar1"-->
+        <!--style="@style/foodRatingBar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content">-->
 
         <!--</RatingBar>-->
 
         <RatingBar
-            android:id="@+id/ratingBar4"
+            android:id="@+id/rating_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
@@ -60,135 +63,11 @@
             android:text="Select the appropriate tags" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ToggleButton
-                android:id="@+id/toggleButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="88dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="176dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="264dp"
-                tools:layout_editor_absoluteY="96dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="264dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="176dp"
-                tools:layout_editor_absoluteY="96dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="88dp"
-                tools:layout_editor_absoluteY="96dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="96dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="264dp"
-                tools:layout_editor_absoluteY="48dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="176dp"
-                tools:layout_editor_absoluteY="48dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="88dp"
-                tools:layout_editor_absoluteY="48dp" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOff="Latin"
-                android:textOn="Latin"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="48dp" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="false" />
 
         <TextView
             android:id="@+id/textView3"
@@ -198,17 +77,18 @@
             android:text="Date of the event:" />
 
         <CalendarView
-        android:id="@+id/edit_date_entry"
-        android:hint="Date of the event"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+            android:id="@+id/edit_date_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Date of the event"
+            />
 
-    <Button
-        android:id="@+id/post_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Post" />
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            app:backgroundTint="#009688" />
 
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

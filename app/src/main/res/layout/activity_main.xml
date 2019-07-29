@@ -32,7 +32,8 @@
             android:background="#146659"
             android:fontFamily="casual"
             android:text="@string/profile_settings"
-            android:textColor="#F2F2F2" />
+            android:textColor="@color/bg_register"
+            app:backgroundTint="#FFEB3B" />
     </com.google.android.material.navigation.NavigationView>
 
 

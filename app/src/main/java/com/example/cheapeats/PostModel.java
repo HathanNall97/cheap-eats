@@ -1,41 +1,50 @@
 package com.example.cheapeats;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.GeoPoint;
+
+import java.util.List;
 //import com.google.type.Date;
 
 
 public class PostModel {
 
 
-//    private Date startTime;
-//    private User author;
+    private float rating;
+    //    private Date startTime;
+    private String authorUserId;
     private int flagCount, cloutValue;
     private GeoPoint location;
     private String title, host, description;
+    private List<String> tags;
 
     /**
-     * @ Data model representing an event posting in the Firestore Database
+     *
      * @param title
-     * @param description
-     * @param flagCount
-     * @param cloutValue
-     * @param location
      * @param host
+     * @param description
+     * @param authorUserId
+     * @param tags
+     * @param rating
      */
-    public PostModel(String title, String description, int flagCount, int cloutValue, GeoPoint location, String host) {
+    public PostModel(String title,String host, String description, String authorUserId, List<String> tags, float rating) {
         this.title = title;
+        this.host = host;
         this.description = description;
+        this.authorUserId = authorUserId;
+        this.tags = tags;
+        this.flagCount = 0;
+        this.cloutValue = (int) rating;
+        this.rating = rating;
 //        this.startTime = startTime;
-//        this.author = author;
-        this.flagCount = flagCount;
-        this.cloutValue = cloutValue;
-        this.location = location;
-        this.host = host;
+//        this.location = location;
     }
-    public PostModel(String title, String host, String description){
+
+    public PostModel(String title, String host, String description, List<String> tags){
         this.title = title;
         this.host = host;
         this.description = description;
+        this.tags = tags;
     }
 
     public PostModel(){
@@ -115,5 +124,13 @@ public class PostModel {
 
     public void setHost(String host) {
         this.host = host;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }

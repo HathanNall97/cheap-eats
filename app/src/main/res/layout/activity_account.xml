@@ -43,7 +43,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backbutton">
+        app:layout_constraintTop_toBottomOf="@+id/backbutton"
+        app:layout_constraintVertical_bias="0.314">
 
 
         <ProgressBar
@@ -71,8 +72,8 @@
             android:textSize="24dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="381dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -81,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Notification Settings"
-                android:textSize="10sp" />
+                android:textColor="#707636"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/Favorites"
@@ -89,15 +92,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Favorites"
-                android:textSize="10sp" />
+                android:textColor="#707636"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/foodPref"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:text="Food Preferences"
-                android:textSize="10sp" />
+                android:textColor="#707636"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:iconTint="#00A59797"
+                app:rippleColor="#00000000" />
         </LinearLayout>
 
         <Button

@@ -10,7 +10,7 @@
 
     <LinearLayout
         style="@style/Base.Theme.AppCompat"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
@@ -48,6 +48,22 @@
 
         <!--</RatingBar>-->
 
+        <EditText
+            android:id="@+id/edit_date_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Date of the Event"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/edit_time_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Time of the event"
+            android:inputType="time" />
+
         <RatingBar
             android:id="@+id/rating_bar"
             android:layout_width="wrap_content"
@@ -69,19 +85,17 @@
             android:layout_height="wrap_content"
             app:singleSelection="false" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/activity_vertical_margin"
-            android:text="Date of the event:" />
+        <!--<CalendarView-->
+            <!--android:id="@+id/edit_date_entry"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Date of the event"-->
+            <!--/>-->
 
-        <CalendarView
-            android:id="@+id/edit_date_entry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Date of the event"
-            />
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/post_button"

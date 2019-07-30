@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.type.Date;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,9 +34,8 @@ import java.util.List;
 
 public class NewPostActivity extends AppCompatActivity {
 
-    private EditText editEventTitle, editHostName, editEventDescription;
+    private EditText editEventTitle, editHostName, editEventDescription, editDate, editTime;
     private ChipGroup tagGroup;
-    private CalendarView eventDate;
     private Button postComplete;
     private RatingBar ratingBar;
 
@@ -56,8 +56,9 @@ public class NewPostActivity extends AppCompatActivity {
         editEventTitle = (EditText) findViewById(R.id.edit_title);
         editHostName = (EditText) findViewById(R.id.edit_host_name);
         editEventDescription = (EditText) findViewById(R.id.edit_description);
+        editTime= (EditText) findViewById(R.id.edit_time_entry);
+        editDate = (EditText) findViewById(R.id.edit_date_entry);
         ratingBar = (RatingBar) findViewById(R.id.rating_bar);
-        eventDate = (CalendarView) findViewById(R.id.edit_date_entry);
         postComplete = (Button) findViewById(R.id.post_button);
         tagGroup = (ChipGroup) findViewById(R.id.chip_group);
 
@@ -129,7 +130,7 @@ public class NewPostActivity extends AppCompatActivity {
         CollectionReference postsRef = FirebaseFirestore.getInstance()
                 .collection("posts");
 
-        PostModel newPost = new PostModel(title,host, description, auth.getCurrentUser().getUid(), tagsToApply, 5, rating);
+        PostModel newPost = new PostModel(title,host, description, auth.getCurrentUser().getUid(), tagsToApply, rating);
         postsRef.add(newPost);
         Toast.makeText(this,"Post Created!", Toast.LENGTH_SHORT);
         finish();

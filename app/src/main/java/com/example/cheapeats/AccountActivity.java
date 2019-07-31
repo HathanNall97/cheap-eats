@@ -48,17 +48,9 @@ public class AccountActivity extends AppCompatActivity {
         btnPassReset = (Button) findViewById(R.id.sending_pass_reset_button);
         btnDeleteAccount = (Button) findViewById(R.id.remove_user_button);
         btnSignOut = (Button) findViewById(R.id.sign_out);
-        btnBack = (Button) findViewById(R.id.backbutton);
         auth = FirebaseAuth.getInstance();
 
-
-        //DONE
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(AccountActivity.this, MainActivity.class));
-            }
-        });
+        
 
         //DONE
         btnPassReset.setOnClickListener(new View.OnClickListener() {

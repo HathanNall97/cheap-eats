@@ -50,7 +50,7 @@ public class AccountActivity extends AppCompatActivity {
         btnSignOut = (Button) findViewById(R.id.sign_out);
         auth = FirebaseAuth.getInstance();
 
-        
+
 
         //DONE
         btnPassReset.setOnClickListener(new View.OnClickListener() {

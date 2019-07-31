@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 
+import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -24,13 +25,22 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +58,10 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 
 public class MainActivity<toggle> extends AppCompatActivity {
     //creation declarations for test layout
@@ -58,6 +72,10 @@ public class MainActivity<toggle> extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference postsRef = db.collection("posts");
     private PostAdapter adapter;
+    private RecyclerView searchedView;
+    //private DatabaseReference dbPosts;
+
+
 
 //    private RecyclerView mListView;
 //    private FirestoreRecyclerAdapter<PostModel, MyRecylerViewHolder> adapter;
@@ -67,7 +85,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
     private Spinner spinnerFilter;
     private Button btnFilterOn, btnFilterOff;
-
     private SearchView searchV;
 
 
@@ -80,6 +97,8 @@ public class MainActivity<toggle> extends AppCompatActivity {
         /* toolbar */
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        setUpRecyclerView();
 
         spinnerFilter = (Spinner) findViewById(R.id.FilterPosts);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -99,6 +118,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
             public void onClick(View view) {
                 String filter = spinnerFilter.getSelectedItem().toString();
                 Toast.makeText(getApplicationContext(), "Applying Filter for " + filter, Toast.LENGTH_SHORT).show();
+                //filterView(filter);
             }
         });
 
@@ -110,8 +130,8 @@ public class MainActivity<toggle> extends AppCompatActivity {
             }
         });
 
-        //-----------------------------   FILTER STUFF DONE ----------------------------------//
 
+        //-----------------------------   FILTER STUFF DONE ----------------------------------//
 
 
 
@@ -122,6 +142,9 @@ public class MainActivity<toggle> extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
+                String s = searchV.toString();
+                searchView(s);
+
                 return false;
             }
 
@@ -136,7 +159,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
         //-----------------------------   SEARCHING STUFF FINISH ----------------------------------//
 
 
-        setUpRecyclerView();
+
         // SOME VERY IMPORTANT VIEW BULLSHIT
 //        View app_bar_view = findViewById(R.id.app_bar_id);
 //        View app_content_veiw= app_bar_view.findViewById(R.id.inluded_content_main_id);
@@ -189,6 +212,44 @@ public class MainActivity<toggle> extends AppCompatActivity {
         drawer.addDrawerListener(toggle);
         toggle.syncState();
     }
+
+    private void filterView(String theFilter)
+    {
+        Query query = postsRef.orderBy("tags", Query.Direction.valueOf(theFilter));
+        //Doesn't Work
+
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void searchView(String s)
+    {
+        Query q = postsRef.orderBy("title", Query.Direction.valueOf(s));
+        //Or something else
+        //THIS DOES NOT WORK!
+
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(q, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+
 
     private void setUpRecyclerView() {
         Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
@@ -243,6 +304,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
+
 
     @Override
     protected void onStop() {

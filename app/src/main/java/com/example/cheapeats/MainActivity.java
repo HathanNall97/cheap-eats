@@ -1,14 +1,21 @@
 package com.example.cheapeats;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.LayoutInflater;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -33,23 +40,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.view.ViewGroup;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.SearchView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class MainActivity<toggle> extends AppCompatActivity {
     //creation declarations for test layout
     private Button btnAccountSettings;
-    private Button browsePostsBtn;
 
-    //post stuff
-//    EditText edt_title, edt_content;
-//    Button btn_post;
-//    RecyclerView recyclerView;
-
-//    private RecyclerView.Adapter mAdapter;
-//    private RecyclerView.LayoutManager layoutManager;
 
     // Represents our database connection to FireStore
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -62,6 +65,14 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
 
+    private Spinner spinnerFilter;
+    private Button btnFilterOn, btnFilterOff;
+
+    private SearchView searchV;
+
+
+
+    //--------------------------   FILTER STUFF START ----------------------------//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +80,88 @@ public class MainActivity<toggle> extends AppCompatActivity {
         /* toolbar */
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        spinnerFilter = (Spinner) findViewById(R.id.FilterPosts);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.filters, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinnerFilter.setAdapter(adapter);
+
+        //SpinnerActivity sp = new SpinnerActivity();
+
+        btnFilterOn = (Button) findViewById(R.id.applyFilterButton);
+        btnFilterOff = (Button) findViewById(R.id.deleteFilterBtn);
+
+        btnFilterOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String filter = spinnerFilter.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(), "Applying Filter for " + filter, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnFilterOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String filter = spinnerFilter.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(), "Deleting Filter for " + filter, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //-----------------------------   FILTER STUFF DONE ----------------------------------//
+
+
+
+
+        //-----------------------------   SEARCHING STUFF START ----------------------------------//
+
+        searchV = (SearchView) findViewById(R.id.searcher);
+        searchV.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //Toast.makeText(getBaseContext(), newText, Toast.LENGTH_LONG).show();
+                return false;
+            }
+        });
+
+
+        //-----------------------------   SEARCHING STUFF FINISH ----------------------------------//
+
+
+        setUpRecyclerView();
+        // SOME VERY IMPORTANT VIEW BULLSHIT
+//        View app_bar_view = findViewById(R.id.app_bar_id);
+//        View app_content_veiw= app_bar_view.findViewById(R.id.inluded_content_main_id);
+//        /*
+//         * TEST CODE FOR POST CREATION
+//         */
+//        edt_content = (EditText) app_content_veiw.findViewById(R.id.edt_content);
+//        edt_title = (EditText) app_content_veiw.findViewById(R.id.edt_title);
+//        btn_post = (Button) app_content_veiw.findViewById(R.id.btn_post);
+//        recyclerView = (RecyclerView)app_content_veiw.findViewById(R.id.my_fucking_recycler_view);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        // SET ONCLICK LISTENER FOR TEST BUTTON
+//        btn_post.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                postComment();
+//            }
+//        });
+
+        /* tell our adapter to start listening, and refreshing on updates*/
+//        adapter.startListening();
+//        recyclerView.setAdapter(adapter);
+
 
 
 

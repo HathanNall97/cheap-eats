@@ -31,15 +31,14 @@
             android:layout_marginTop="@dimen/nav_header_height"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/UserSettings"
+
+            <SearchView
+                android:id="@+id/searcher"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/bg_main"
-                android:fontFamily="casual"
-                android:text="@string/profile_settings"
-                android:textColor="#F2F2F2" />
+                android:layout_height="62dp"
+                android:layout_marginTop="5dp">
+
+            </SearchView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,13 +77,13 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/SearchPosts"
+                android:id="@+id/UserSettings"
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:layout_marginTop="5dp"
                 android:background="@color/bg_main"
                 android:fontFamily="casual"
-                android:text="Search Posts"
+                android:text="@string/profile_settings"
                 android:textColor="#F2F2F2" />
 
         </LinearLayout>

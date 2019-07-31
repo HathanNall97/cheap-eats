@@ -3,13 +3,19 @@ package com.example.cheapeats;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Log;
 import android.view.LayoutInflater;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -23,6 +29,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -30,6 +39,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,15 +52,7 @@ import android.widget.Toast;
 public class MainActivity<toggle> extends AppCompatActivity {
     //creation declarations for test layout
     private Button btnAccountSettings;
-    private Button browsePostsBtn;
 
-    //post stuff
-//    EditText edt_title, edt_content;
-//    Button btn_post;
-//    RecyclerView recyclerView;
-
-//    private RecyclerView.Adapter mAdapter;
-//    private RecyclerView.LayoutManager layoutManager;
 
     // Represents our database connection to FireStore
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -163,6 +165,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
 
+        setUpRecyclerView();
         btnAccountSettings = (Button) findViewById(R.id.UserSettings);
         btnAccountSettings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,15 +181,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, NewPostActivity.class));
             }
         });
-
-//        browsePostsBtn = (Button) findViewById(R.id.button1);
-//        browsePostsBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, PostBrowsingActivity.class));
-//            }
-//        });
-//        browsePostsBtn = (Button) findViewById(R.id.PostCreateButton);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

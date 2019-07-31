@@ -52,7 +52,6 @@ public class AccountActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
 
-
         //DONE
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

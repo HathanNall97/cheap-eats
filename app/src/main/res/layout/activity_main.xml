@@ -13,27 +13,82 @@
         layout="@layout/app_bar_main"
         android:id="@+id/app_bar_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/colorPrimary"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        >>
+        >
 
-        <Button
-            android:id="@+id/UserSettings"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/nav_header_height"
-            android:background="#146659"
-            android:fontFamily="casual"
-            android:text="@string/profile_settings"
-            android:textColor="@color/bg_register"
-            app:backgroundTint="#FFEB3B" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/UserSettings"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_main"
+                android:fontFamily="casual"
+                android:text="@string/profile_settings"
+                android:textColor="#F2F2F2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/FilterPosts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/bg_main"
+                    android:entries="@array/filters"
+                    android:fontFamily="casual"
+                    android:popupBackground="@color/bg_main"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#F2F2F2" />
+
+                <Button
+                    android:id="@+id/applyFilterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:background="#3773B4"
+                    android:text="ON"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/deleteFilterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:background="#3773B4"
+                    android:text="OFF" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/SearchPosts"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_main"
+                android:fontFamily="casual"
+                android:text="Search Posts"
+                android:textColor="#F2F2F2" />
+
+        </LinearLayout>
+
     </com.google.android.material.navigation.NavigationView>
 
 

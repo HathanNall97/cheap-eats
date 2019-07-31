@@ -38,6 +38,35 @@
     <string name="prompt_password">Enter a new password</string>
     <string name="profile_settings">Profile Settings</string>
     <string name="title_activity_post_browsing">PostBrowsingActivity</string>
+    <string-array name="filters">
+        <item>Latin</item>
+        <item>Pub Food</item>
+        <item>Happy Hour</item>
+        <item>Student Organized</item>
+        <item>Sandwiches</item>
+        <item>American</item>
+        <item>BBQ</item>
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Dessert</item>
+        <item>Salads</item>
+        <item>Asian</item>
+        <item>Pizza</item>
+        <item>Hamburgers</item>
+        <item>Pasta</item>
+        <item>Healthy</item>
+        <item>Italian</item>
+        <item>Diet Nutrition</item>
+        <item>Vegetarian</item>
+        <item>Vegan</item>
+        <item>Halal</item>
+        <item>Gluten Free</item>
+        <item>Organic</item>
+        <item>Low-fat</item>
+        <item>Low-carb</item>
+        <item>Kosher</item>
+    </string-array>
     <string name="event_host">Event Host</string>
     <string name="hello">Latin</string>
     <string name="title_activity_maps">Map</string>

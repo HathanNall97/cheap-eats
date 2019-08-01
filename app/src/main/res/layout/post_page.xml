@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--fill in the posts name in textview-->
+    <TextView
+        android:id="@+id/postName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="postName" />
+
+    <!--fill in the posts name in textview-->
+    <TextView
+        android:id="@+id/hostName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hostName" />
+
+    <!--fill in the post's name in text view-->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date" />
+
+    <!--fill in the post's  in text view-->
+    <TextView
+        android:id="@+id/tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tags: " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!--fill in the posts name in textview-->
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5" />
+
+        <!--fill in the posts name in textview-->
+        <Button
+            android:id="@+id/like"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:background="@drawable/ic_unliked" />
+
+        <!--fill in the posts name in textview-->
+        <TextView
+            android:id="@+id/likePercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="%" />
+
+        <!--fill in the posts name in textview-->
+        <Button
+            android:id="@+id/dislike"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:background="@drawable/ic_undisliked" />
+
+        <!--fill in the posts name in textview-->
+        <TextView
+            android:id="@+id/dislikePercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="%" />
+    </LinearLayout>
+
+    <!--fill in the posts name in textview-->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

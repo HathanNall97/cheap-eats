@@ -36,7 +36,8 @@
                 android:id="@+id/searcher"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:background="#00DBD2D2">
 
             </SearchView>
 
@@ -70,9 +71,13 @@
                 <Button
                     android:id="@+id/deleteFilterBtn"
                     android:layout_width="wrap_content"
-                    android:layout_height="68dp"
-                    android:background="#3773B4"
-                    android:text="OFF" />
+                    android:layout_height="match_parent"
+                    android:background="#000000"
+                    android:text="OFF"
+                    android:textColor="#180404"
+                    android:visibility="visible"
+                    app:backgroundTint="#F2FE72"
+                    app:iconTint="#00000000" />
 
             </LinearLayout>
 
@@ -81,10 +86,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:layout_marginTop="5dp"
-                android:background="@color/bg_main"
+                android:background="#0F4470"
                 android:fontFamily="casual"
                 android:text="@string/profile_settings"
-                android:textColor="#F2F2F2" />
+                android:textColor="#000000" />
 
         </LinearLayout>
 

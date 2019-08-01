@@ -4,6 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
     defaultConfig {
+        vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         applicationId "com.example.cheapeats"
         minSdkVersion 16

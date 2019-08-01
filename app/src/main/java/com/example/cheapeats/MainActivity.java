@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
 
 public class MainActivity<toggle> extends AppCompatActivity {
     //creation declarations for test layout
-    private Button btnAccountSettings;
+    private Button btnAccountSettings, btnClearAll;
 
 
     // Represents our database connection to FireStore
@@ -142,10 +142,9 @@ public class MainActivity<toggle> extends AppCompatActivity {
         searchV.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
                 CharSequence searchSequence = searchV.getQuery();
-
                 String searcher = searchSequence.toString();
+                Toast.makeText(getApplicationContext(), "Searching Posts for " + searcher, Toast.LENGTH_SHORT).show();
 
                 searchView(searcher);
 
@@ -161,6 +160,17 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
         //-----------------------------   SEARCHING STUFF FINISH ----------------------------------//
+
+        //-----------------------------   CLEAR ALL STUFFINS ----------------------------------//
+        btnClearAll = (Button) findViewById(R.id.clearbutton);
+        btnClearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetOrignalView();
+            }
+        });
+
+
 
 
 
@@ -288,7 +298,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
 
         adapter.startListening();
     }

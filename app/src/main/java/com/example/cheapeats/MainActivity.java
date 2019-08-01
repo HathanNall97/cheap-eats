@@ -118,7 +118,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
             public void onClick(View view) {
                 String filter = spinnerFilter.getSelectedItem().toString();
                 Toast.makeText(getApplicationContext(), "Applying Filter for " + filter, Toast.LENGTH_SHORT).show();
-                //filterView(filter);
+                filterView(filter);
             }
         });
 
@@ -127,6 +127,7 @@ public class MainActivity<toggle> extends AppCompatActivity {
             public void onClick(View view) {
                 String filter = spinnerFilter.getSelectedItem().toString();
                 Toast.makeText(getApplicationContext(), "Deleting Filter for " + filter, Toast.LENGTH_SHORT).show();
+                resetOrignalView();
             }
         });
 
@@ -142,8 +143,11 @@ public class MainActivity<toggle> extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
-                String s = searchV.toString();
-                searchView(s);
+                CharSequence searchSequence = searchV.getQuery();
+
+                String searcher = searchSequence.toString();
+
+                searchView(searcher);
 
                 return false;
             }
@@ -213,11 +217,67 @@ public class MainActivity<toggle> extends AppCompatActivity {
         toggle.syncState();
     }
 
+
+    // ---------------------- filter view function -------------------- //
+    
     private void filterView(String theFilter)
     {
-        Query query = postsRef.orderBy("tags", Query.Direction.valueOf(theFilter));
-        //Doesn't Work
+        // first, tell the adapter to stop listening so we can update it
+        adapter.stopListening();
+        
+        Query query = postsRef.whereArrayContains("tags", theFilter);
 
+
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        // after our changes, tell the adapter to start listening
+        adapter.startListening();
+
+
+        // after our changes, tell the adapter to start listening
+
+    }
+
+
+    //------------------ Searching Function ----------------------- //
+
+    private void searchView(String searchString)
+    {
+        adapter.stopListening();
+
+        Query q = postsRef.whereEqualTo("title", searchString);
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(q, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        adapter.startListening();
+    }
+
+    private void resetOrignalView()
+    {
+        adapter.stopListening();
+
+        Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+
+        // put the query into the adapter
         FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
                 .setQuery(query, PostModel.class)
                 .build();
@@ -228,26 +288,9 @@ public class MainActivity<toggle> extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-    }
-
-    private void searchView(String s)
-    {
-        Query q = postsRef.orderBy("title", Query.Direction.valueOf(s));
-        //Or something else
-        //THIS DOES NOT WORK!
 
 
-        // put the query into the adapter
-        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
-                .setQuery(q, PostModel.class)
-                .build();
-
-        adapter = new PostAdapter(options);
-
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(adapter);
+        adapter.startListening();
     }
 
 

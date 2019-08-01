@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

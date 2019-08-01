@@ -19,6 +19,7 @@ public class AccountActivity extends AppCompatActivity {
     private Button btnNotificationSettings, btnFaves, btnFoodPrefs, btnChangeUserN, btnSendText;
     private String email;
     private TextView emailDisplay, userNameDisplay;
+
     private EditText textEditor;
     FirebaseAuth auth;
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

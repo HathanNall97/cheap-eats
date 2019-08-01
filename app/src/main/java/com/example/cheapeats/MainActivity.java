@@ -1,5 +1,6 @@
 package com.example.cheapeats;
 
+import android.app.Notification;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
@@ -60,7 +62,7 @@ import javax.annotation.Nullable;
 
 public class MainActivity<toggle> extends AppCompatActivity {
     //creation declarations for test layout
-    private Button btnAccountSettings;
+    private Button btnAccountSettings, btnClearAll;
 
 
     // Represents our database connection to FireStore
@@ -71,16 +73,16 @@ public class MainActivity<toggle> extends AppCompatActivity {
     //private DatabaseReference dbPosts;
 
 
-
 //    private RecyclerView mListView;
 //    private FirestoreRecyclerAdapter<PostModel, MyRecylerViewHolder> adapter;
 //    FirestoreRecyclerOptions<PostModel> options;
 
 
 
-    private Spinner spinnerFilter;
-    private Button btnFilterOn, btnFilterOff;
+    private Spinner spinnerFilter, sortBySpinner;
+    private Button btnFilterOn, btnFilterOff, sortByBtn;
     private SearchView searchV;
+
 
 
 
@@ -137,10 +139,9 @@ public class MainActivity<toggle> extends AppCompatActivity {
         searchV.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(getBaseContext(), query, Toast.LENGTH_LONG).show();
                 CharSequence searchSequence = searchV.getQuery();
-
                 String searcher = searchSequence.toString();
+                Toast.makeText(getApplicationContext(), "Searching Posts for " + searcher, Toast.LENGTH_SHORT).show();
 
                 searchView(searcher);
 
@@ -156,6 +157,68 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
         //-----------------------------   SEARCHING STUFF FINISH ----------------------------------//
+
+        //-----------------------------   CLEAR ALL STUFFINS ----------------------------------//
+        btnClearAll = (Button) findViewById(R.id.clearbutton);
+        btnClearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resetOrignalView();
+            }
+        });
+        //-----------------------------   CLEAR ALL STUFFINS DONE ----------------------------------//
+
+
+
+        // ----------------------------  Sort By Stuff ----------------------------------- //
+
+        sortBySpinner = (Spinner) findViewById(R.id.SortBy);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
+                R.array.sortbys, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        sortBySpinner.setAdapter(adapter1);
+
+        sortByBtn = (Button) findViewById(R.id.sortByButton);
+        sortByBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sortBy = sortBySpinner.getSelectedItem().toString();
+
+                Toast.makeText(getApplicationContext(), "Sorting List by " + sortBy, Toast.LENGTH_SHORT).show();
+
+                if(sortBy.equalsIgnoreCase("title"))
+                {
+                        setTitleView();
+                }
+                else if(sortBy.equalsIgnoreCase("description"))
+                {
+                    //RETURN DESCRIPTION LIST
+                    setDescriptionView();
+                }
+                else if(sortBy.equalsIgnoreCase("clout"))
+                {
+                    resetOrignalView();
+                }
+                else if(sortBy.equalsIgnoreCase("amount of tags"))
+                {
+                    //RETURN Tag LIST
+                }
+                else if(sortBy.equalsIgnoreCase("host"))
+                {
+                    //RETURN Host LIST
+                    setHostView();
+                }
+
+            }
+        });
+
+
+
+
+
+
 
 
 
@@ -240,7 +303,6 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
         // after our changes, tell the adapter to start listening
-
     }
 
 
@@ -268,8 +330,32 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
     private void resetOrignalView()
     {
+
         adapter.stopListening();
 
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("cloutValue", Query.Direction.DESCENDING);
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        adapter.startListening();
+    }
+
+    private void setTitleView()
+    {
+        adapter.stopListening();
+
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
         Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
 
         // put the query into the adapter
@@ -284,13 +370,84 @@ public class MainActivity<toggle> extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        adapter.startListening();
+
+    }
+
+    private void setDescriptionView()
+    {
+        adapter.stopListening();
+
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("description", Query.Direction.ASCENDING);
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
         adapter.startListening();
+
+    }
+
+    private void setHostView()
+    {
+        adapter.stopListening();
+
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("host", Query.Direction.ASCENDING);
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        adapter.startListening();
+
+    }
+
+    private void setViewbyTags()
+    {
+        adapter.stopListening();
+
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("tags", Query.Direction.DESCENDING);
+
+        // put the query into the adapter
+        FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
+                .setQuery(query, PostModel.class)
+                .build();
+
+        adapter = new PostAdapter(options);
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        adapter.startListening();
+
+
     }
 
 
     private void setUpRecyclerView() {
-        Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("cloutValue", Query.Direction.DESCENDING);
 
         // put the query into the adapter
         FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()

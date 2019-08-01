@@ -285,7 +285,8 @@ public class MainActivity<toggle> extends AppCompatActivity {
     {
         adapter.stopListening();
 
-        Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("cloutValue", Query.Direction.DESCENDING);
 
         // put the query into the adapter
         FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()
@@ -304,7 +305,8 @@ public class MainActivity<toggle> extends AppCompatActivity {
 
 
     private void setUpRecyclerView() {
-        Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        //Query query = postsRef.orderBy("title", Query.Direction.ASCENDING);
+        Query query = postsRef.orderBy("cloutValue", Query.Direction.DESCENDING);
 
         // put the query into the adapter
         FirestoreRecyclerOptions options = new FirestoreRecyclerOptions.Builder<PostModel>()

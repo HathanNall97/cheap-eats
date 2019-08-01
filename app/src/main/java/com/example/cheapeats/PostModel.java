@@ -10,10 +10,10 @@ import java.util.List;
 public class PostModel {
 
 
-    private float rating;
+    private int rating;
     //    private Date startTime;
     private String authorUserId;
-    private int flagCount, cloutValue;
+    private int flagCount, cloutValue, likeCount, dislikeCount;
     private GeoPoint location;
     private String title, host, description, firebaseKey;
     private List<String> tags;
@@ -27,13 +27,15 @@ public class PostModel {
      * @param tags
      * @param rating
      */
-    public PostModel(String title,String host, String description, String authorUserId, List<String> tags, float rating) {
+    public PostModel(String title,String host, String description, String authorUserId, List<String> tags, int rating) {
         this.title = title;
         this.host = host;
         this.description = description;
         this.authorUserId = authorUserId;
         this.tags = tags;
         this.flagCount = 0;
+        this.likeCount = 0;
+        this.dislikeCount = 0;
         this.cloutValue = (int) rating;
         this.rating = rating;
 //        this.startTime = startTime;

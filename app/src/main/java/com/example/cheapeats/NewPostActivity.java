@@ -131,7 +131,7 @@ public class NewPostActivity extends AppCompatActivity {
         CollectionReference postsRef = FirebaseFirestore.getInstance()
                 .collection("posts");
 
-        PostModel newPost = new PostModel(title,host, description, auth.getCurrentUser().getUid(), tagsToApply, rating);
+        PostModel newPost = new PostModel(title,host, description, auth.getCurrentUser().getUid(), tagsToApply, (int)rating);
         postsRef.add(newPost);
 //        postsRef.getId();
         Toast.makeText(this,"Post Created!", Toast.LENGTH_SHORT);

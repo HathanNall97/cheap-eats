@@ -15,7 +15,7 @@ public class PostModel {
     private String authorUserId;
     private int flagCount, cloutValue;
     private GeoPoint location;
-    private String title, host, description;
+    private String title, host, description, firebaseKey;
     private List<String> tags;
 
     /**
@@ -132,5 +132,13 @@ public class PostModel {
 
     public void setTags(List<String> tags) {
         this.tags = tags;
+    }
+
+    public String getFirebaseKey() {
+        return firebaseKey;
+    }
+
+    public void setFirebaseKey(String firebaseKey) {
+        this.firebaseKey = firebaseKey;
     }
 }

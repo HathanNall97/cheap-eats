@@ -119,6 +119,7 @@ public class NewPostActivity extends AppCompatActivity {
         String host = editEventDescription.getText().toString();
         String description = editHostName.getText().toString();
         float rating = ratingBar.getRating();
+        String newKey;
 
         if(title.trim().isEmpty() || description.trim().isEmpty()){
             Toast.makeText(this, "NOT EMPTY DINGUS",Toast.LENGTH_SHORT);
@@ -132,6 +133,7 @@ public class NewPostActivity extends AppCompatActivity {
 
         PostModel newPost = new PostModel(title,host, description, auth.getCurrentUser().getUid(), tagsToApply, rating);
         postsRef.add(newPost);
+//        postsRef.getId();
         Toast.makeText(this,"Post Created!", Toast.LENGTH_SHORT);
         finish();
     }

@@ -9,30 +9,34 @@
     app:cardBackgroundColor="#DCFAFF">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="8dp">
-
         <TextView
             android:id="@+id/text_view_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toStartOf="@+id/btn_view_post"
+            android:layout_toLeftOf="@+id/btn_view_post"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+
         <!--<TextView-->
-            <!--android:id="@+id/text_view_priority"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:text="1"-->
-            <!--android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
+        <!--android:id="@+id/text_view_priority"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:text="1"-->
+        <!--android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
 
         <TextView
             android:id="@+id/text_view_description"
@@ -41,20 +45,32 @@
             android:layout_below="@+id/text_view_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toStartOf="@+id/btn_view_post"
+            android:layout_toLeftOf="@+id/btn_view_post"
             android:text="Description"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        <Button
-            android:id="@+id/openPost"
+        <ImageButton
+            android:id="@+id/btn_view_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="17dp"
-            android:text="Open" />
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="3dp"
+            app:srcCompat="@drawable/ic_chevron_right_black_24dp" />
 
+        <TextView
+            android:id="@+id/post_key_holder"
+            android:text=""
+            android:visibility="invisible"
+            android:layout_width= "0dp"
+            android:layout_height="0dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

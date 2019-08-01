@@ -67,6 +67,13 @@
         <item>Low-carb</item>
         <item>Kosher</item>
     </string-array>
+    <string-array name="sortbys">
+        <item>Title</item>
+        <item>Description</item>
+        <item>Clout</item>
+        <item>Amount of Tags</item>
+        <item>Host</item>
+    </string-array>
     <string name="event_host">Event Host</string>
     <string name="hello">Latin</string>
     <string name="title_activity_maps">Map</string>

@@ -81,6 +81,35 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/SortBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/bg_main"
+                    android:entries="@array/sortbys"
+                    android:fontFamily="casual"
+                    android:popupBackground="@color/bg_main"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#F2F2F2" />
+
+                <Button
+                    android:id="@+id/sortByButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#3773B4"
+                    android:text="SORT LIST"
+                    android:textColor="#000000" />
+
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/UserSettings"
                 android:layout_width="match_parent"

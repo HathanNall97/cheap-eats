@@ -16,4 +16,9 @@ Cheap Eats gives an easy-to-read, easy-to-follow way for students to find the ch
 
 ### Documentation
  - [Software Requirements Specification](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/SRS%20-Cheap%20Eats.docx.pdf)
+ #### Sprints
+ - [Sprint 1 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint1Review.docx)
+ - [Sprint 2 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%202%20Review.pdf)
+ - [Sprint 3 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%203%20Review.docx)
+ - [Sprint 4 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%204%20Review%20(2).docx)
 

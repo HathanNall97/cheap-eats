@@ -31,4 +31,10 @@ Cheap Eats gives an easy-to-read, easy-to-follow way for students to find the ch
  - [State Transition Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/State-Transition%20Diagram.png)
  #### Presentation
  - [Cheap Eats Presentation](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Cheap%20Eats%20Presentation.pptx)
+ #### Screen Shots
+ - [Registration View](https://github.com/NathanRHall97/Cheap-Eats-Application/blob/master/Documentation/RegistrationView.png)
+ - [Login View](https://github.com/NathanRHall97/Cheap-Eats-Application/blob/master/Documentation/LoginView.png)
+ - [Post View](https://github.com/NathanRHall97/Cheap-Eats-Application/blob/master/Documentation/PostView.png)
+ - [List View](https://github.com/NathanRHall97/Cheap-Eats-Application/blob/master/Documentation/ListView.png)
+ - [Query View](https://github.com/NathanRHall97/Cheap-Eats-Application/blob/master/Documentation/QueryView.png)
 

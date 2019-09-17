@@ -14,3 +14,6 @@ Cheap Eats gives an easy-to-read, easy-to-follow way for students to find the ch
 ### Product Functions 
 - The functions of the CheapEats application allow the users of the application to explore a vast amount of options within the application including getting notifications about events, users posting about events, and other users rating / liking / disliking those posts. Any user can filter these posts and events to their choosing. 
 
+### Documentation
+ - [Software Requirements Specification](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/SRS%20-Cheap%20Eats.docx.pdf)
+

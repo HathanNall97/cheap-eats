@@ -21,7 +21,7 @@ Cheap Eats gives an easy-to-read, easy-to-follow way for students to find the ch
  - [Sprint 2 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%202%20Review.pdf)
  - [Sprint 3 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%203%20Review.pdf)
  - [Sprint 4 Review](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Sprint%204%20Review%20(2).pdf)
- ### Diagrams
+ #### Diagrams
  - [Authentication Activity Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/ActvityDiagramAuth.png)
  - [Authentication Sequence Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/ActvityDiagramAuth.png)
  - [Browsing / Searching Use Case Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Browsing_Searching.png)
@@ -29,4 +29,6 @@ Cheap Eats gives an easy-to-read, easy-to-follow way for students to find the ch
  - [Networking Use Case Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Networking.png)
  - [SRS Class Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/SRS%20Class%20Diagram.png)
  - [State Transition Diagram](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/State-Transition%20Diagram.png)
+ #### Presentation
+ - [Cheap Eats Presentation](https://github.com/HathanNall97/cheap-eats/blob/master/Documentation/Cheap%20Eats%20Presentation.pptx)
 
